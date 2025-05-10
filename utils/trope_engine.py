@@ -1,4 +1,3 @@
-
 import json
 import os
 
@@ -28,3 +27,5 @@ def generate_prompt(tropes, selected_type, selected_length):
 - 其與主角的關係或初始設定（如：退婚對象、宿敵、暗戀者）
 請以列表方式條列角色設定。
 """
+
+

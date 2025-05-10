@@ -1,0 +1,5 @@
+[theme]
+base="light"
+primaryColor="#000000"
+font="serif"
+DEEPSEEK_API_KEY = "sk-864a3678af894c299d5b6ba9d561f85a"

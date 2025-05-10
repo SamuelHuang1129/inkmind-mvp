@@ -1,22 +1,14 @@
-
-import os
+import streamlit as st
 import requests
-from dotenv import load_dotenv
 
-load_dotenv()
-
+API_KEY = st.secrets["DEEPSEEK_API_KEY"]
 API_URL = "https://api.deepseek.com/v1/chat/completions"
-API_KEY = os.getenv("DEEPSEEK_API_KEY")
-
-
 
 def call_deepseek(prompt, temperature=0.7):
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json"
     }
-
-
     body = {
         "model": "deepseek-chat",
         "messages": [
@@ -25,9 +17,7 @@ def call_deepseek(prompt, temperature=0.7):
         ],
         "temperature": temperature
     }
-    
     response = requests.post(API_URL, headers=headers, json=body)
-
     if response.status_code == 200:
         return response.json()["choices"][0]["message"]["content"]
     else:
